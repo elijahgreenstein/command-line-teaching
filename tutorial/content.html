@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Prepare module content &#8212; CLT 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Upload materials to Canvas" href="upload.html" />
+    <link rel="prev" title="3. Set up a new module" href="module.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="prepare-module-content">
+<h1><span class="section-number">4. </span>Prepare module content<a class="headerlink" href="#prepare-module-content" title="Link to this heading">¶</a></h1>
+<p>In this tutorial, we will add content to the files created by the <code class="docutils literal notranslate"><span class="pre">addmod</span></code> tool.</p>
+<section id="introduction-page">
+<span id="id1"></span><h2><span class="section-number">4.1. </span>Introduction page<a class="headerlink" href="#introduction-page" title="Link to this heading">¶</a></h2>
+<p>Open <code class="docutils literal notranslate"><span class="pre">intro.md</span></code>. It should contain the following text:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---
+title: &quot;1.1. Introduction&quot;
+---
+</pre></div>
+</div>
+<p>As you can see, the file contains <a class="reference external" href="https://yaml.org">YAML-formatted</a> metadata between the lines containing three hyphens (<code class="docutils literal notranslate"><span class="pre">---</span></code>). The title for the page must appear here. Notice that the CLT <code class="docutils literal notranslate"><span class="pre">addmod</span></code> tool provided a default title with a prefix, <code class="docutils literal notranslate"><span class="pre">1.1.</span></code>. This communicates that the introduction is the first item in the first content module. Let’s edit our title and add some content as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---
+title: &quot;1.1. Welcome to \&quot;CLT\&quot;!&quot;
+---
+
+# Welcome to CLT 101!
+
+This week we will learn about Command Line Teaching.
+</pre></div>
+</div>
+<p>Recall that we used the <a class="reference external" href="https://commonmark.org">CommonMark</a> Markdown syntax when we drafted the default quiz description in <a class="reference internal" href="course.html"><span class="doc">Part 2 of the tutorial</span></a>. We must also follow this Markdown syntax to format course pages and <a class="reference internal" href="#discussion-boards"><span class="std std-ref">discussion board prompts</span></a>. Refer to the <a class="reference internal" href="../markdown.html"><span class="doc">Markdown reference</span></a> for additional details about the Markdown parser used by the CLT toolkit.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice that we have placed the title text inside quotation marks and that we have escaped quotation marks that are part of the text (<code class="docutils literal notranslate"><span class="pre">\&quot;CLT\&quot;</span></code>). Enclose all titles in quotation marks to ensure that CLT tools parse the text correctly.</p>
+</div>
+<p>Save and close the file.</p>
+</section>
+<section id="quizzes">
+<span id="tutorial-content-quizzes"></span><h2><span class="section-number">4.2. </span>Quizzes<a class="headerlink" href="#quizzes" title="Link to this heading">¶</a></h2>
+<p>Open <code class="docutils literal notranslate"><span class="pre">quiz.yaml</span></code>. It should contain this <a class="reference external" href="https://yaml.org">YAML-formatted</a> text:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.2.</span><span class="nv"> </span><span class="s">Quiz&quot;</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="nt">times</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">unlock_at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-05-01T17:00:00Z&quot;</span>
+<span class="w">  </span><span class="nt">due_at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-05-01T18:00:00Z&quot;</span>
+<span class="w">  </span><span class="nt">lock_at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-05-01T18:30:00Z&quot;</span>
+<span class="nt">questions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">question</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;What</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">...&quot;</span>
+<span class="w">    </span><span class="nt">correct</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Answer</span><span class="nv"> </span><span class="s">1&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Answer</span><span class="nv"> </span><span class="s">2&quot;</span>
+<span class="w">    </span><span class="nt">incorrect</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Answer</span><span class="nv"> </span><span class="s">3&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Answer</span><span class="nv"> </span><span class="s">4&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">question</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Write</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">...&quot;</span>
+</pre></div>
+</div>
+<p>Notice that the title, <code class="docutils literal notranslate"><span class="pre">1.2.</span> <span class="pre">Quiz</span></code>, indicates that this is the second item in the first content module.</p>
+</section>
+<section id="quiz-settings">
+<h2><span class="section-number">4.3. </span>Quiz settings<a class="headerlink" href="#quiz-settings" title="Link to this heading">¶</a></h2>
+<p>Recall that we set default unlock times, deadlines, and lock times for quizzes when we created our course with the <code class="docutils literal notranslate"><span class="pre">newcourse</span></code> tool in the <a class="reference internal" href="course.html"><span class="doc">second tutorial</span></a>. Notice that the CLT <code class="docutils literal notranslate"><span class="pre">addmod</span></code> tool combined those times with our quiz date, <code class="docutils literal notranslate"><span class="pre">2025-05-01</span></code>, to create date-time strings that the Canvas API can parse.</p>
+<p>Additionally notice that the quiz <code class="docutils literal notranslate"><span class="pre">description</span></code> is set to <code class="docutils literal notranslate"><span class="pre">null</span></code>. The CLT toolkit will, therefore, use the default quiz description in <code class="docutils literal notranslate"><span class="pre">CLT101/_conf/quiz-desc.md</span></code> when we upload the quiz to Canvas in the <a class="reference internal" href="upload.html"><span class="doc">next tutorial</span></a>. Refer to the <a class="reference internal" href="../howto/quiz.html"><span class="doc">guide to quizzes</span></a> to learn how to customize the quiz description for an individual quiz.</p>
+<section id="quiz-questions">
+<h3><span class="section-number">4.3.1. </span>Quiz questions<a class="headerlink" href="#quiz-questions" title="Link to this heading">¶</a></h3>
+<p>The default quiz template contains two questions. Note the structure of each question:</p>
+<ul class="simple">
+<li><p>Each question follows the <code class="docutils literal notranslate"><span class="pre">questions:</span></code> line.</p></li>
+<li><p>Each question begins with <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">question:</span></code>, which is offset by two spaces.</p></li>
+<li><p>Question text is enclosed in quotation marks and follows <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">question:</span></code>.</p></li>
+</ul>
+<p>CLT tools can handle three kinds of questions:</p>
+<ul class="simple">
+<li><p>Questions without answers are treated as <em>essay questions</em>. The second question in the template is an essay question.</p></li>
+<li><p>Questions with only one correct answer are treated as <em>multiple choice questions</em>. The template above does not contain a multiple choice question.</p></li>
+<li><p>Questions with more than one correct answer are treated as <em>multiple answers questions</em>. The first question in the template is a multiple answers question.</p></li>
+</ul>
+<p>Notice that answers are divided into two groups: <code class="docutils literal notranslate"><span class="pre">correct</span></code> and <code class="docutils literal notranslate"><span class="pre">incorrect</span></code>. Both of these words are preceded by four spaces to align with the word <code class="docutils literal notranslate"><span class="pre">question</span></code> and both are followed by a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> character.</p>
+<p>Answers follow either <code class="docutils literal notranslate"><span class="pre">correct</span></code> or <code class="docutils literal notranslate"><span class="pre">incorrect</span></code>. Each answer text is preceded by six spaces, a hyphen <code class="docutils literal notranslate"><span class="pre">-</span></code>, and another space. Each answer is enclosed in quotation marks.</p>
+<p>Let’s add some questions to our quiz. We will first add a multiple choice question. Remove the text beneath <code class="docutils literal notranslate"><span class="pre">questions:</span></code> and add the following:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">questions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">question</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Which</span><span class="nv"> </span><span class="s">tool</span><span class="nv"> </span><span class="s">creates</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">module?&quot;</span>
+<span class="w">    </span><span class="nt">correct</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;addmod&quot;</span>
+<span class="w">    </span><span class="nt">incorrect</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;newcourse&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;upmod&quot;</span>
+</pre></div>
+</div>
+<p>This question has only one correct answer; it will be treated as a multiple choice question.</p>
+<p>Now let’s add a multiple answers question and an essay question:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">questions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">question</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Which</span><span class="nv"> </span><span class="s">tool</span><span class="nv"> </span><span class="s">creates</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">module?&quot;</span>
+<span class="w">    </span><span class="nt">correct</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;addmod&quot;</span>
+<span class="w">    </span><span class="nt">incorrect</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;newcourse&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;upmod&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">question</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;What</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">default</span><span class="nv"> </span><span class="s">module</span><span class="nv"> </span><span class="s">items?&quot;</span>
+<span class="w">    </span><span class="nt">correct</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;pages&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;quizzes&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;discussions&quot;</span>
+<span class="w">    </span><span class="nt">incorrect</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;assignments&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">question</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;What</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">you</span><span class="nv"> </span><span class="s">like</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">CLT</span><span class="nv"> </span><span class="s">tools?&quot;</span>
+</pre></div>
+</div>
+<p>The second question has three correct answers; it will bee treated as a multiple answers question. The final question does not have answers listed; it will be treated as an essay question.</p>
+<p>Save and close the file.</p>
+</section>
+</section>
+<section id="discussion-boards">
+<span id="id2"></span><h2><span class="section-number">4.4. </span>Discussion boards<a class="headerlink" href="#discussion-boards" title="Link to this heading">¶</a></h2>
+<p>Finally, let’s update our discussion board. Open <code class="docutils literal notranslate"><span class="pre">disc.md</span></code>. It should contain this text:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---
+title: &quot;1.3. Discussion&quot;
+---
+</pre></div>
+</div>
+<p>Notice that the discussion also begins with <a class="reference external" href="https://yaml.org">YAML-formatted</a> metadata and that the title indicates that this is the third item in the first content module.</p>
+<p>As with the <a class="reference internal" href="#introduction-page"><span class="std std-ref">introduction page</span></a>, we can add Markdown-formatted text to this file below the metadata:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---
+title: &quot;1.3. Discussion&quot;
+---
+
+# Overview
+
+Discuss:
+
+1. how to create a new course with CLT; and
+1. how to add a module to your course.
+</pre></div>
+</div>
+<p>Save and close the file.</p>
+</section>
+<section id="next-steps">
+<h2><span class="section-number">4.5. </span>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h2>
+<p>Now that our module has some content, we can upload it to Canvas in the <a class="reference internal" href="upload.html"><span class="doc">next tutorial</span></a>.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">CLT</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=elijahgreenstein&repo=command-line-teaching&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="course.html">2. Set up a new course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">3. Set up a new module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Prepare module content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upload.html">5. Upload materials to Canvas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-to guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/course.html">How to customize course settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/module.html">How to customize module settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/quiz.html">How to customize quizzes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown in the CLT toolkit</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="module.html" title="previous chapter"><span class="section-number">3. </span>Set up a new module</a></li>
+      <li>Next: <a href="upload.html" title="next chapter"><span class="section-number">5. </span>Upload materials to Canvas</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Elijah Greenstein.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/tutorial/content.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

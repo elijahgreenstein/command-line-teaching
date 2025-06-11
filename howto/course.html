@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>How to customize course settings &#8212; CLT 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to customize module settings" href="module.html" />
+    <link rel="prev" title="5. Upload materials to Canvas" href="../tutorial/upload.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="how-to-customize-course-settings">
+<h1>How to customize course settings<a class="headerlink" href="#how-to-customize-course-settings" title="Link to this heading">¶</a></h1>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">¶</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">newcourse</span></code> tool to create a new course:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>clt<span class="w"> </span>newcourse<span class="w"> </span>&lt;NAME&gt;
+</pre></div>
+</div>
+<p>Answer the questions. After the <code class="docutils literal notranslate"><span class="pre">newcourse</span></code> tool creates course files, open <code class="docutils literal notranslate"><span class="pre">&lt;NAME&gt;/_conf/settings.yam</span></code>.</p>
+</section>
+<section id="default-settings">
+<h2>Default settings<a class="headerlink" href="#default-settings" title="Link to this heading">¶</a></h2>
+<p>The default settings are shown below, where <code class="docutils literal notranslate"><span class="pre">&lt;USER&gt;</span></code> represents user responses to the <code class="docutils literal notranslate"><span class="pre">newcourse</span></code> prompts:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">course</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">course_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;NAME&gt;&quot;</span>
+<span class="w">  </span><span class="nt">course_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;USER&gt;&quot;</span>
+<span class="w">  </span><span class="nt">course_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;USER&gt;</span>
+<span class="nt">discussion</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">discussion_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">threaded</span>
+<span class="w">  </span><span class="nt">published</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">quiz</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">hide_results</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">  </span><span class="nt">quiz_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assignment</span>
+<span class="w">  </span><span class="nt">shuffle_answers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">times</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">unlock_at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;USER&gt;&quot;</span>
+<span class="w">  </span><span class="nt">due_at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;USER&gt;&quot;</span>
+<span class="w">  </span><span class="nt">lock_at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;USER&gt;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="change-discussion-settings">
+<h2>Change discussion settings<a class="headerlink" href="#change-discussion-settings" title="Link to this heading">¶</a></h2>
+<p>Default discussing settings follow <code class="docutils literal notranslate"><span class="pre">discussion</span></code>. The <a class="reference external" href="https://canvas.instructure.com/doc/api/">Canvas API documentation</a> provides details about other options for “<a class="reference external" href="https://canvas.instructure.com/doc/api/discussion_topics.html#method.discussion_topics.create">Discussion Topics</a>.” Follow <a class="reference external" href="https://yaml.org">YAML</a> syntax to add other parameters.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">discussion</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">discussion_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">threaded</span>
+<span class="w">  </span><span class="nt">published</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">require_initial_post</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">sort_order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">asc</span>
+</pre></div>
+</div>
+<p>With these settings, the CLT <code class="docutils literal notranslate"><span class="pre">upmod</span></code> tool will upload discussions that</p>
+<ol class="arabic simple">
+<li><p>are “threaded,”</p></li>
+<li><p>remain unpublished after upload (instructors will need to publish them manually on Canvas),</p></li>
+<li><p>require students to make a post before viewing other posts, and</p></li>
+<li><p>are sorted in “ascending” order.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Boolean options take values <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. One-word strings do not need to be placed in quotation marks (<code class="docutils literal notranslate"><span class="pre">string</span></code>). Strings with punctuation should be placed in quotation marks (<code class="docutils literal notranslate"><span class="pre">&quot;string:</span> <span class="pre">punctuation&quot;</span></code>) to ensure correct parsing.</p>
+</div>
+</section>
+</section>
+<section id="change-quiz-settings">
+<h2>Change quiz settings<a class="headerlink" href="#change-quiz-settings" title="Link to this heading">¶</a></h2>
+<p>Default quiz settings follow <code class="docutils literal notranslate"><span class="pre">quiz</span></code>. The <a class="reference external" href="https://canvas.instructure.com/doc/api/">Canvas API documentation</a> provides details about other options for “<a class="reference external" href="https://canvas.instructure.com/doc/api/quizzes.html#method.quizzes/quizzes_api.create">Quizzes</a>.” Follow <a class="reference external" href="https://yaml.org">YAML</a> syntax to add other parameters.</p>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">quiz</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">hide_results</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">  </span><span class="nt">quiz_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">practice_quiz</span>
+<span class="w">  </span><span class="nt">shuffle_answers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">time_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">  </span><span class="nt">one_question_at_a_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<p>With these settings, the CLT <code class="docutils literal notranslate"><span class="pre">upmod</span></code> tool will upload quizzes that</p>
+<ol class="arabic simple">
+<li><p>hide results,</p></li>
+<li><p>are practice quizzes rather than assignments,</p></li>
+<li><p>shuffle answers,</p></li>
+<li><p>impose a five-minute time limit,</p></li>
+<li><p>and require students to answer questions one at a time.</p></li>
+</ol>
+</section>
+</section>
+<section id="change-quiz-times">
+<h2>Change quiz times<a class="headerlink" href="#change-quiz-times" title="Link to this heading">¶</a></h2>
+<p>Edit the times following <code class="docutils literal notranslate"><span class="pre">unlock_at</span></code>, <code class="docutils literal notranslate"><span class="pre">due_at</span></code>, and <code class="docutils literal notranslate"><span class="pre">lock_at</span></code> to change the default quiz times.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This may be necessary during a term due to changes to/from daylight savings time.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">CLT</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=elijahgreenstein&repo=command-line-teaching&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/course.html">2. Set up a new course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/module.html">3. Set up a new module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/content.html">4. Prepare module content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/upload.html">5. Upload materials to Canvas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-to guides</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to customize course settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">How to customize module settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quiz.html">How to customize quizzes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown in the CLT toolkit</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../tutorial/upload.html" title="previous chapter"><span class="section-number">5. </span>Upload materials to Canvas</a></li>
+      <li>Next: <a href="module.html" title="next chapter">How to customize module settings</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Elijah Greenstein.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/howto/course.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

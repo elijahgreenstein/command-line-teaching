@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2. Set up a new course &#8212; CLT 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Set up a new module" href="module.html" />
+    <link rel="prev" title="1. Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="set-up-a-new-course">
+<h1><span class="section-number">2. </span>Set up a new course<a class="headerlink" href="#set-up-a-new-course" title="Link to this heading">¶</a></h1>
+<p>In this tutorial, we will use the CLT command line interface to set up a new course: “CLT101 – Introduction to Command Line Teaching.”</p>
+<section id="preparation">
+<h2><span class="section-number">2.1. </span>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">¶</a></h2>
+<p>We will need an access token to make API calls to Canvas. Follow the <a class="reference external" href="https://community.canvaslms.com/t5/Canvas-Basics-Guide/How-do-I-manage-API-access-tokens-in-my-user-account/ta-p/615312">Canvas instructions</a> to generate an access token. We will use the token shortly.</p>
+<p>Next, determine the API URL for your institution. The URL should end with the path <code class="docutils literal notranslate"><span class="pre">/api/v1</span></code>. Be prepared to copy this URL.</p>
+<p>Finally, change into a directory to hold your courses.</p>
+</section>
+<section id="create-a-new-course">
+<h2><span class="section-number">2.2. </span>Create a new course<a class="headerlink" href="#create-a-new-course" title="Link to this heading">¶</a></h2>
+<p>We are now ready to set up a new course. We can access the CLT toolkit with the command <code class="docutils literal notranslate"><span class="pre">clt</span></code>, followed by the name of a “tool.” To create a new course, we use the <code class="docutils literal notranslate"><span class="pre">newcourse</span></code> tool followed by the name of a directory. For this tutorial, we will set up our new course in a directory named <code class="docutils literal notranslate"><span class="pre">CLT101</span></code>. Type the following command and press <code class="docutils literal notranslate"><span class="pre">enter</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>clt<span class="w"> </span>newcourse<span class="w"> </span>CLT101
+</pre></div>
+</div>
+<p>You will now be asked a series of questions:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">Enter</span> <span class="pre">API</span> <span class="pre">token</span></code></dt><dd><p>Copy the access token that you generated on Canvas, paste it here, and press <code class="docutils literal notranslate"><span class="pre">enter</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">Enter</span> <span class="pre">API</span> <span class="pre">URL:</span></code></dt><dd><p>Copy the API URL for your institution, paste it here, and press <code class="docutils literal notranslate"><span class="pre">enter</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">Enter</span> <span class="pre">course</span> <span class="pre">unique</span> <span class="pre">identifier:</span></code></dt><dd><p>Open your course on Canvas. The URL will end with the path <code class="docutils literal notranslate"><span class="pre">/courses/&lt;UID&gt;</span></code>. Find the identifier after <code class="docutils literal notranslate"><span class="pre">courses</span></code> (in place of <code class="docutils literal notranslate"><span class="pre">&lt;UID&gt;</span></code>), copy it, paste it here, and press <code class="docutils literal notranslate"><span class="pre">enter</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">Enter</span> <span class="pre">quiz</span> <span class="pre">unlock</span> <span class="pre">time:</span></code></dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">newcourse</span></code> tool will set up a default time to unlock each module quiz. Enter the default unlock time in Coordinated Universal Time (UTC), in the format <code class="docutils literal notranslate"><span class="pre">HH:MM:SS</span></code>. For example, let’s say that we want our quizzes to unlock at 10:00 AM Pacific Daylight Time (PDT). PDT is seven hours behind UTC, so type <code class="docutils literal notranslate"><span class="pre">17:00:00</span></code> and press <code class="docutils literal notranslate"><span class="pre">enter</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">Enter</span> <span class="pre">quiz</span> <span class="pre">deadline:</span></code></dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">newcourse</span></code> tool will set up a default deadline for each module quiz. Let’s say that we want students to complete the quizzes by 11:00:00 AM PDT, one hour after quizzes unlock. Type <code class="docutils literal notranslate"><span class="pre">18:00:00</span></code> and press <code class="docutils literal notranslate"><span class="pre">enter</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">Enter</span> <span class="pre">quiz</span> <span class="pre">lock</span> <span class="pre">time:</span></code></dt><dd><p>Students will not be able to access quizzes after the lock time. Let’s give students an extra 30 minutes to submit a late quiz. Type <code class="docutils literal notranslate"><span class="pre">18:30:00</span></code> and press <code class="docutils literal notranslate"><span class="pre">enter</span></code>.</p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">newcourse</span></code> tool will now create a new directory, <code class="docutils literal notranslate"><span class="pre">CLT101</span></code>, containing several sub-directories and configuration files.</p>
+</section>
+<section id="file-structure">
+<h2><span class="section-number">2.3. </span>File structure<a class="headerlink" href="#file-structure" title="Link to this heading">¶</a></h2>
+<p>Let’s explore the files and directories set up with the <code class="docutils literal notranslate"><span class="pre">newcourse</span></code> tool:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CLT101/
+    _conf/
+        quiz-desc.md
+        settings.yaml
+        token
+    modules/
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">_conf</span></code> directory contains our course configuration files. We will edit a few of them to finalize our course set up.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">modules</span></code> directory will hold our course modules. We will set up a new module in the <a class="reference internal" href="module.html"><span class="doc">next tutorial</span></a>.</p>
+</section>
+<section id="default-quiz-description">
+<h2><span class="section-number">2.4. </span>Default quiz description<a class="headerlink" href="#default-quiz-description" title="Link to this heading">¶</a></h2>
+<p>We can edit <code class="docutils literal notranslate"><span class="pre">CLT101/_conf/quiz-desc.md</span></code> to prepare a default quiz description. We will format the quiz description following the <a class="reference external" href="https://commonmark.org">CommonMark</a> Markdown specification. (Refer to the <a class="reference internal" href="../markdown.html"><span class="doc">Markdown reference</span></a> for additional details about the Markdown parser used by the CLT toolkit.) Open <code class="docutils literal notranslate"><span class="pre">quiz-desc.md</span></code>, delete any text, and add the following:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## Overview
+
+This is an open-book quiz:
+
+- You **may** refer to course materials and notes.
+- You **may not** ask classmates for help.
+
+## Deadline
+
+Submit your quiz by 11:00 AM.
+</pre></div>
+</div>
+<p>Notice that we have used a level-two heading for our first heading: <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Overview</span></code>. Level-one <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> tags are reserved for webpage titles, so we will use level-two headings for the top-level headings in the body of our content.</p>
+<p>Save and close <code class="docutils literal notranslate"><span class="pre">quiz-desc.md</span></code>. CLT tools will use the above description for each quiz, unless we provide an alternative description. Refer to the <a class="reference internal" href="../howto/quiz.html"><span class="doc">guide to quizzes</span></a> for details about quiz customization.</p>
+</section>
+<section id="token">
+<h2><span class="section-number">2.5. </span>Token<a class="headerlink" href="#token" title="Link to this heading">¶</a></h2>
+<p>Your Canvas access token was written to <code class="docutils literal notranslate"><span class="pre">CLT101/_conf/token</span></code>. If your access token changes, you can replace the token in this file.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Do not make the access token public. Do not use Command Line Teaching on a shared computer where others can access your <code class="docutils literal notranslate"><span class="pre">token</span></code> file. If you use Git for version control for your course, add <code class="docutils literal notranslate"><span class="pre">token</span></code> to your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p>
+</div>
+</section>
+<section id="next-steps">
+<h2><span class="section-number">2.6. </span>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h2>
+<p>Now that we know how to set up a course with the <code class="docutils literal notranslate"><span class="pre">newcourse</span></code> tool, we can move on to the <a class="reference internal" href="module.html"><span class="doc">next tutorial</span></a>. For additional details about how to customize your course, refer to the <a class="reference internal" href="../howto/course.html"><span class="doc">guide to course settings</span></a>.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">CLT</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=elijahgreenstein&repo=command-line-teaching&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Set up a new course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">3. Set up a new module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content.html">4. Prepare module content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upload.html">5. Upload materials to Canvas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-to guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/course.html">How to customize course settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/module.html">How to customize module settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/quiz.html">How to customize quizzes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown in the CLT toolkit</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter"><span class="section-number">1. </span>Installation</a></li>
+      <li>Next: <a href="module.html" title="next chapter"><span class="section-number">3. </span>Set up a new module</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Elijah Greenstein.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/tutorial/course.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

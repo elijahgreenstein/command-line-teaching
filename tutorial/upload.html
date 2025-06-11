@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5. Upload materials to Canvas &#8212; CLT 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to customize course settings" href="../howto/course.html" />
+    <link rel="prev" title="4. Prepare module content" href="content.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="upload-materials-to-canvas">
+<h1><span class="section-number">5. </span>Upload materials to Canvas<a class="headerlink" href="#upload-materials-to-canvas" title="Link to this heading">¶</a></h1>
+<p>In this tutorial, we will use the CLT toolkit to upload our course materials to Canvas LMS.</p>
+<section id="the-upload-tool">
+<h2><span class="section-number">5.1. </span>The upload tool<a class="headerlink" href="#the-upload-tool" title="Link to this heading">¶</a></h2>
+<p>Module upload is simple with the CLT <code class="docutils literal notranslate"><span class="pre">upmod</span></code> tool. Make sure that <code class="docutils literal notranslate"><span class="pre">CLT101</span></code> is the current working directory; then type this command and press <code class="docutils literal notranslate"><span class="pre">enter</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>clt<span class="w"> </span>-v<span class="w"> </span>upmod<span class="w"> </span>Week_01
+</pre></div>
+</div>
+<p>We used the “verbose” option <code class="docutils literal notranslate"><span class="pre">-v</span></code> to make the <code class="docutils literal notranslate"><span class="pre">upmod</span></code> tool print messages about the upload process. If all settings are configured correctly, the following should print to the terminal:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Uploading module: &#39;Week_01&#39;
+- Posting module ...
+    - Status: 200
+- Posting item &#39;1.1. Welcome to &quot;CLT&quot;!&#39; ...
+    - Status: 200
+- Posting item &#39;1.2. Quiz&#39; ...
+    - Status: 200
+- Posting item &#39;1.3. Discussion&#39; ...
+    - Status: 200
+- Moving item &#39;1.1. Welcome to &quot;CLT&quot;!&#39; ...
+    - Status: 200
+- Moving item &#39;1.2. Quiz&#39; ...
+    - Status: 200
+- Moving item &#39;1.3. Discussion&#39; ...
+    - Status: 200
+- Adding questions to &#39;1.2. Quiz&#39; ...
+    - Status: 200
+    - Status: 200
+    - Status: 200
+- Updating points for &#39;1.2. Quiz&#39; ...
+    - Status: 200
+</pre></div>
+</div>
+<p>Note the steps in the process:</p>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">upmod</span></code> tool posts (creates) the module,</p></li>
+<li><p>the tool posts each module item (introduction page, quiz, and discussion),</p></li>
+<li><p>the tool moves each item to the new module,</p></li>
+<li><p>the tool adds questions to the quiz, and</p></li>
+<li><p>finally, the tool updates the quiz points.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A status code of <code class="docutils literal notranslate"><span class="pre">200</span></code> indicates success. Any other status code indicates a problem and a failure to post, move, or update the listed item.</p>
+<p>If an API request fails, first try a test run to identify possible issues. Replicate the command above but type <code class="docutils literal notranslate"><span class="pre">-t</span></code> before <code class="docutils literal notranslate"><span class="pre">upmod</span></code>. Content for the expected API call will print to the terminal.</p>
+<p>If the problem is still unclear, replicate the above command but replace <code class="docutils literal notranslate"><span class="pre">-v</span></code> with <code class="docutils literal notranslate"><span class="pre">-vv</span></code> for additional messages. Each API response will print to the terminal.</p>
+</div>
+</section>
+<section id="next-steps">
+<h2><span class="section-number">5.2. </span>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h2>
+<p>Content uploads are as simple as that! For additional customization, refer to the how-to guides:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../howto/course.html"><span class="doc">How to customize course settings</span></a></p></li>
+<li><p><a class="reference internal" href="../howto/module.html"><span class="doc">How to customize module settings</span></a></p></li>
+<li><p><a class="reference internal" href="../howto/quiz.html"><span class="doc">How to customize quizzes</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">CLT</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=elijahgreenstein&repo=command-line-teaching&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="course.html">2. Set up a new course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">3. Set up a new module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content.html">4. Prepare module content</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Upload materials to Canvas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-to guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/course.html">How to customize course settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/module.html">How to customize module settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/quiz.html">How to customize quizzes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown in the CLT toolkit</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="content.html" title="previous chapter"><span class="section-number">4. </span>Prepare module content</a></li>
+      <li>Next: <a href="../howto/course.html" title="next chapter">How to customize course settings</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Elijah Greenstein.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/tutorial/upload.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
