@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools >= 75.1.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "command-line-teaching"
+version = "0.1.0"
+authors = [ { name="Elijah Greenstein" } ]
+description = "Command line tools to create, organize, and upload teaching materials."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+dependencies = [
+  "jinja2",
+  "markdown-it-py",
+  "mdit_py_plugins",
+  "pyyaml",
+  "requests",
+]
+
+[project.scripts]
+clt = "clteaching:__main__.main"
+
+[project.optional-dependencies]
+testing = [
+  "pytest",
+]
+docs = [
+  "sphinx",
+]
+
