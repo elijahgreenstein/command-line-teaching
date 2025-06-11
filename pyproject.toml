@@ -34,4 +34,4 @@ docs = [
 where = ["src"]
 
 [tool.setuptools.package-data]
-clteaching = ["templates/*"]
+clteaching = ["templates/_conf/*", "templates/modules/*"]
