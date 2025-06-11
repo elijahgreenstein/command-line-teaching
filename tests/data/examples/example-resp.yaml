@@ -1,0 +1,118 @@
+module:
+  - TEST_CREATE: # module
+      URL: "example/api/courses/987/modules"
+      "-H":
+        Authorization: "Bearer 12345ABCDE"
+      json:
+        module:
+          name: "A test module"
+          position: 3
+items:
+  - TEST_CREATE: # page
+      URL: "example/api/courses/987/pages"
+      "-H":
+        Authorization: "Bearer 12345ABCDE"
+      json:
+        wiki_page:
+          title: "1.1. Introduction"
+          body: |
+            <h2 id="overview">Overview</h2>
+            <p>This is a test module.</p>
+  - TEST_CREATE: # quiz
+      URL: "example/api/courses/987/quizzes"
+      "-H":
+        Authorization: "Bearer 12345ABCDE"
+      json:
+        quiz:
+          hide_results: always
+          quiz_type: assignment
+          shuffle_answers: true
+          unlock_at: "2025-05-01T12:00:00Z"
+          due_at: "2025-05-01T13:00:00Z"
+          lock_at: "2025-05-01T14:00:00Z"
+          title: "1.2. Quiz"
+          description: |
+            <h2 id="overview">Overview</h2>
+            <p>A modified quiz description for the test module.</p>
+  - TEST_CREATE: # discussion
+      URL: "example/api/courses/987/discussion_topics"
+      "-H":
+        Authorization: "Bearer 12345ABCDE"
+      json:
+        discussion_type: threaded
+        published: false
+        title: "1.3. Discussion"
+        message: |
+          <h2 id="overview">Overview</h2>
+          <p>A test discussion.</p>
+          <h2 id="to-do">To-Do</h2>
+          <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          </ul>
+moves:
+  - TEST_MOVE: # page
+      URL: "example/api/courses/987/modules/TEST_ID/items"
+      "-H":
+        Authorization: "Bearer 12345ABCDE"
+      json:
+        module_item:
+          type: Page
+          page_url: TEST_ID
+          position: 1
+  - TEST_MOVE: # quiz
+      URL: "example/api/courses/987/modules/TEST_ID/items"
+      "-H":
+        Authorization: "Bearer 12345ABCDE"
+      json:
+        module_item:
+          type: Quiz
+          content_id: TEST_ID
+          position: 2
+  - TEST_MOVE: # discussion
+      URL: "example/api/courses/987/modules/TEST_ID/items"
+      "-H":
+        Authorization: "Bearer 12345ABCDE"
+      json:
+        module_item:
+          type: Discussion
+          content_id: TEST_ID
+          position: 3
+quiz:
+  -
+    - TEST_ADD_QUESTION:
+        URL: "example/api/courses/987/quizzes/TEST_ID/questions"
+        "-H":
+          Authorization: "Bearer 12345ABCDE"
+        json:
+          question:
+            question_name: Question
+            question_text: "What are the correct answers?"
+            question_type: "multiple_answers_question"
+            points_possible: 1
+            answers:
+              - answer_text: "Answer 1"
+                answer_weight: 100.0
+              - answer_text: "Answer 2"
+                answer_weight: 100.0
+              - answer_text: "Answer 3"
+                answer_weight: 0.0
+              - answer_text: "Answer 4"
+                answer_weight: 0.0
+    - TEST_ADD_QUESTION:
+        URL: "example/api/courses/987/quizzes/TEST_ID/questions"
+        "-H":
+          Authorization: "Bearer 12345ABCDE"
+        json:
+          question:
+            question_name: Question
+            question_text: "Write about a test case."
+            question_type: "essay_question"
+            points_possible: 1
+  - TEST_UPDATE_PTS:
+      URL: "example/api/courses/987/quizzes/TEST_ID"
+      "-H":
+        Authorization: "Bearer 12345ABCDE"
+      json:
+        quiz:
+          points_possible: 2
