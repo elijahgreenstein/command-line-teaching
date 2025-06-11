@@ -2,7 +2,7 @@
 
 Command Line Teaching (CLT) is a Python library that enables instructors to develop course materials quickly and upload them to [Canvas LMS by Instructure](https://www.instructure.com/canvas) through API calls---all from the command line.
 
-Refer to the CLT documentation for detailed instructions. Basic usage described below.
+Refer to the [CLT documentation](https://elijahgreenstein.github.io/command-line-teaching/) for detailed instructions. Basic usage described below.
 
 ## Installation
 

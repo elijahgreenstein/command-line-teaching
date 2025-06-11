@@ -19,6 +19,9 @@ dependencies = [
   "requests",
 ]
 
+[project.urls]
+Documentation = "https://elijahgreenstein.github.io/command-line-teaching/"
+
 [project.scripts]
 clt = "clteaching:__main__.main"
 
