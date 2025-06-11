@@ -10,45 +10,59 @@ from clteaching import loaders, objects, util
 FS = util.FileStructure()
 
 
-def get_env():
+def get_tpl_dict(tpl_path):
+    """Load a dictionary of templates."""
+    tpl_dict = {}
+    course = [FS.cset, FS.qdesc, FS.token]
+    mod = [FS.mod / file for file in [FS.mset, FS.intro, FS.quiz, FS.disc]]
+    for path in course + mod:
+        with open(tpl_path / path, encoding="utf-8") as f:
+            tpl_text = f.read()
+        tpl_dict[str(path)] = tpl_text
+    return tpl_dict
+
+
+def get_env(tpl_dict):
     """Get environment."""
     return jinja2.Environment(
-        loader=jinja2.PackageLoader("clteaching"),
+        loader=jinja2.DictLoader(tpl_dict),
         autoescape=jinja2.select_autoescape,
     )
 
 
-def get_template_paths(dirname):
+def get_template_paths(dirname, tpl_path):
     """Get template paths in ``template/dirname``."""
-    env = get_env()
+    tpl_dict = get_tpl_dict(tpl_path)
+    env = get_env(tpl_dict)
     return env.list_templates(filter_func=lambda x: x.startswith(str(dirname)))
 
 
-def render_template(tpl_name, variables):
+def render_template(tpl_name, variables, tpl_path):
     """Render a template with a dictionary of variables."""
-    env = get_env()
+    tpl_dict = get_tpl_dict(tpl_path)
+    env = get_env(tpl_dict)
     template = env.get_template(tpl_name)
     return template.render(variables)
 
 
-def newcourse(name, verb):
+def newcourse(name, verb, tpl_path):
     """Create a new course from templates."""
     if name.exists():
         raise FileExistsError(f"'{name}' already exists.")
     user = util.UserInput(name)
     user.get_course_input()
-    tpls = get_newcourse(user.course_conf)
+    tpls = get_newcourse(user.course_conf, tpl_path)
     write_newcourse(name, tpls, verb)
 
 
-def get_newcourse(user_input):
+def get_newcourse(user_input, tpl_path):
     """Get keyed templates rendered from user input."""
     # Get templates
-    tpl_names = get_template_paths(str(FS.course))
+    tpl_names = get_template_paths(str(FS.course), tpl_path)
     # Render templates
     rendered = {}
     for tpl in tpl_names:
-        rendered[tpl] = render_template(tpl, user_input)
+        rendered[tpl] = render_template(tpl, user_input, tpl_path)
     return rendered
 
 
@@ -70,7 +84,7 @@ def write_newcourse(name, tpls, verb):
         log.log(1, log.msgs["create"].format(name=tpl))
 
 
-def addmod(name, verb):
+def addmod(name, verb, tpl_path):
     """Add a module with template files."""
     cset = FS.course / "settings.yaml"
     mpath = FS.mod / name
@@ -82,7 +96,7 @@ def addmod(name, verb):
         # Update user input with times from course settings
         user.add_mod_conf(cset["times"])
         # Get templates and write
-        tpls = get_mod_tpls(name, user.mod_conf)
+        tpls = get_mod_tpls(name, user.mod_conf, tpl_path)
         write_mod(name, tpls, verb)
     elif mpath.exists():
         raise FileExistsError(f"'{name}' already exists.")
@@ -90,15 +104,15 @@ def addmod(name, verb):
         raise FileNotFoundError(f"No course settings file, '{cset}'.")
 
 
-def get_mod_tpls(name, user_input):
+def get_mod_tpls(name, user_input, tpl_path):
     """Get keyed templates rendered from user input."""
     # Get templates
-    tpl_names = get_template_paths(str(FS.mod))
+    tpl_names = get_template_paths(str(FS.mod), tpl_path)
     # Render templates and change output path in process
     rendered = {}
     for tpl in tpl_names:
         outpath = FS.mod / name / pathlib.Path(tpl).name
-        rendered[outpath] = render_template(tpl, user_input)
+        rendered[outpath] = render_template(tpl, user_input, tpl_path)
     return rendered
 
 

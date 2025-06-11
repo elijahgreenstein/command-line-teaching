@@ -8,6 +8,7 @@ from clteaching import cli
 
 def main() -> None:
     """Parse command line arguments and execute."""
+    tpl_path = Path(__file__).parent / "templates"
     parser = argparse.ArgumentParser(
         prog="Command Line Teaching",
         description="Create a course, add a module, or upload a module.",
@@ -32,7 +33,7 @@ def main() -> None:
     if args.action == "upmod":
         args.func(Path(args.name), args.verbose, args.test_run)
     else:
-        args.func(Path(args.name), args.verbose)
+        args.func(Path(args.name), args.verbose, tpl_path)
 
 
 if __name__ == "__main__":
