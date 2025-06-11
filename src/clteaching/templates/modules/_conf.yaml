@@ -1,0 +1,8 @@
+module_name: "{{ module_name }}"
+title: "{{ title }}"
+position: {{ position }}
+item_order:
+  - [intro.md, page]
+  - [quiz.yaml, quiz]
+  - [disc.md, disc]
+
