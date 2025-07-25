@@ -3,9 +3,10 @@
 import pathlib
 
 from markdown_it import MarkdownIt
-from mdit_py_plugins.footnote import footnote_plugin
-from mdit_py_plugins.deflist import deflist_plugin
 from mdit_py_plugins.anchors import anchors_plugin
+from mdit_py_plugins.deflist import deflist_plugin
+from mdit_py_plugins.footnote import footnote_plugin
+from mdit_py_plugins.front_matter import front_matter_plugin
 import yaml
 
 
@@ -115,37 +116,31 @@ class Logger:
         self.verbosity = new_verb
 
 
-def md2html(text):
-    """Convert Markdown to HTML."""
+def md2html(filepath, text, get_meta=True):
+    """Convert Markdown to HTML.
+
+    Returns dictionary with "meta" keyed to metadata, "body" keyed to body text
+    converted to HTML. If ``get_meta`` is set to ``False``, metadata is not
+    parsed and "meta" is keyed to ``None``.
+    """
     md = (
         MarkdownIt("commonmark", {"typographer": True})
         .enable(["replacements", "smartquotes", "table"])
-        .use(footnote_plugin)
-        .use(deflist_plugin)
         .use(anchors_plugin)
+        .use(deflist_plugin)
+        .use(footnote_plugin)
+        .use(front_matter_plugin)
     )
-    return md.render(text)
-
-
-def split_yaml_body(fname, text):
-    """Split YAML metadata block from body text of Markdown file."""
-    lines = text.strip().split("\n")
-    complete_yaml = False
-    meta = []
-    if lines[0] == "---":
-        idx = 1
-        while idx < len(lines):
-            if lines[idx] == "---":
-                complete_yaml = True
-                break
-            meta.append(lines[idx])
-            idx += 1
-        if complete_yaml:
-            meta = "\n".join(meta)
-            body = "\n".join(lines[idx + 1 :])
-            return meta.strip(), body.strip()
-        raise ValueError(f"{fname} does not contain a complete YAML metadata block.")
-    raise ValueError(f"{fname} does not begin with a YAML metadata block.")
+    if get_meta:
+        tokens = md.parse(text)
+        if tokens[0].type == "front_matter":
+            meta = yaml.safe_load(tokens[0].content)
+            body = md.renderer.render(tokens, md.options, env=None).lstrip()
+            return {"meta": meta, "body": body}
+        raise ValueError(
+            f"{filepath} does not begin with a complete YAML metadata block."
+        )
+    return {"meta": None, "body": md.render(text).lstrip()}
 
 
 def load_yaml(file):
