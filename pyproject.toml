@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "command-line-teaching"
-version = "0.1.0"
+version = "0.1.1"
 authors = [ { name="Elijah Greenstein" } ]
 description = "Command line tools to create, organize, and upload teaching materials."
 readme = "README.md"
