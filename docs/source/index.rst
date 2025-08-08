@@ -33,7 +33,7 @@ Follow the "Tutorial" for a basic introduction to the CLT toolkit. Refer to the 
   :maxdepth: 1
   :caption: Reference
 
-  markdown
+  reference/markdown
 
 .. include:: links.rst
 
