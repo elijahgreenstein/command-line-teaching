@@ -65,5 +65,5 @@ The "`Heading Anchors <mditpyplugins_anchors_>`_" plugin is enabled with the max
 
   ## A Great Heading
 
-.. include:: links.rst
+.. include:: ../links.rst
 
