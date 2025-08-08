@@ -8,32 +8,18 @@ Command Line Teaching
 
 Command Line Teaching (CLT) is a command line toolkit written in Python that enables instructors to develop online course materials quickly from a set of plain text files. The command line interface simplifies the organization of modules, the creation of course materials from templates, and their upload to an online learning management system (`Canvas LMS by Instructure <canvas_lms_>`__) through API calls.
 
-Follow the "Tutorial" for a basic introduction to the CLT toolkit. Refer to the "How-to" guides for more advanced customization and to the "Reference" material for additional information about how the toolkit works.
-
 .. toctree::
-  :maxdepth: 1
-  :caption: Tutorial
-  :numbered:
+  :hidden:
 
-  tutorial/installation
-  tutorial/course
-  tutorial/module
-  tutorial/content
-  tutorial/upload
+  navigation/tutorial
+  navigation/explanation
+  navigation/howto
+  navigation/reference
 
-.. toctree::
-  :maxdepth: 1
-  :caption: How-to guides
-
-  howto/course
-  howto/module
-  howto/quiz
-
-.. toctree::
-  :maxdepth: 1
-  :caption: Reference
-
-  reference/markdown
+* Start with the :doc:`Tutorial <navigation/tutorial>` for a gentle introduction to the CLT toolkit.
+* Read the :doc:`Explanation <navigation/explanation>` for an overview of the CLT approach to learning materials.
+* Refer to the :doc:`How-to guides <navigation/howto>` for examples of how to customize your course.
+* Use the :doc:`Reference <navigation/reference>` to look up details about CLT settings and markup language.
 
 .. include:: links.rst
 
