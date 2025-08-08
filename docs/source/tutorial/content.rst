@@ -30,7 +30,7 @@ As you can see, the file contains `YAML-formatted <yaml_>`_ metadata between the
 
   This week we will learn about Command Line Teaching.
 
-Recall that we used the `CommonMark <commonmark_>`_ Markdown syntax when we drafted the default quiz description in :doc:`Part 2 of the tutorial <course>`. We must also follow this Markdown syntax to format course pages and :ref:`discussion board prompts <discussion-boards>`. Refer to the :doc:`Markdown reference <../markdown>` for additional details about the Markdown parser used by the CLT toolkit.
+Recall that we used the `CommonMark <commonmark_>`_ Markdown syntax when we drafted the default quiz description in :doc:`Part 2 of the tutorial <course>`. We must also follow this Markdown syntax to format course pages and :ref:`discussion board prompts <discussion-boards>`. Refer to the :doc:`Markdown reference <../reference/markdown>` for additional details about the Markdown parser used by the CLT toolkit.
 
 .. note::
 
