@@ -32,10 +32,9 @@ html_theme_options = {
 }
 
 html_sidebars = {
-    '**': [
-        'about.html',
-        'searchfield.html',
-        'navigation.html',
+    "**": [
+        "about.html",
+        "searchfield.html",
+        "navigation.html",
     ],
 }
-
