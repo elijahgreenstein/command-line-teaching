@@ -1,6 +1,8 @@
 .. highlight: none
 
-Markdown in the CLT toolkit
+.. _markdown:
+
+Markdown conventions used by the CLT toolkit
 ============================================================
 
 The Command Line Teaching (CLT) toolkit uses a `Markdown-It-Py Markdown parser <markdown_it_py_>`_ to convert Markdown-formatted text to HTML. The parser is set up with the default ``commonmark`` configuration options, which conform to the `CommonMark <commonmark_>`_ Markdown specification, as well as the extensions discussed below.
