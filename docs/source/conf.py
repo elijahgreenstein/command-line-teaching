@@ -6,28 +6,35 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'CLT'
-copyright = '2025, Elijah Greenstein'
-author = 'Elijah Greenstein'
-release = '0.1.1'
+project = "CLT"
+copyright = "2025, Elijah Greenstein"
+author = "Elijah Greenstein"
+release = "0.1.1"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = []
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 exclude_patterns = []
-
 
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
+html_theme = "alabaster"
+html_static_path = ["_static"]
 
 html_theme_options = {
-        "github_user": "elijahgreenstein",
-        "github_repo": "command-line-teaching",
-        }
+    "github_user": "elijahgreenstein",
+    "github_repo": "command-line-teaching",
+}
+
+html_sidebars = {
+    "**": [
+        "about.html",
+        "searchfield.html",
+        "navigation.html",
+    ],
+}

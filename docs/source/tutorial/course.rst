@@ -64,7 +64,7 @@ The ``modules`` directory will hold our course modules. We will set up a new mod
 Default quiz description
 ------------------------------------------------------------
 
-We can edit ``CLT101/_conf/quiz-desc.md`` to prepare a default quiz description. We will format the quiz description following the `CommonMark <commonmark_>`_ Markdown specification. (Refer to the :doc:`Markdown reference <../markdown>` for additional details about the Markdown parser used by the CLT toolkit.) Open ``quiz-desc.md``, delete any text, and add the following::
+We can edit ``CLT101/_conf/quiz-desc.md`` to prepare a default quiz description. We will format the quiz description following the `CommonMark <commonmark_>`_ Markdown specification. (Refer to the :doc:`Markdown reference <../reference/markdown>` for additional details about the Markdown parser used by the CLT toolkit.) Open ``quiz-desc.md``, delete any text, and add the following::
 
   ## Overview
 
