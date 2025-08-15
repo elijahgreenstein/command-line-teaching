@@ -19,7 +19,7 @@ Command Line Teaching (CLT) is a command line toolkit written in Python that ena
 * Start with the :doc:`Tutorial <navigation/tutorial>` for a gentle introduction to the CLT toolkit.
 * Read the :doc:`Explanation <navigation/explanation>` for an overview of the CLT approach to learning materials.
 * Refer to the :doc:`How-to guides <navigation/howto>` for examples of how to customize your course.
-* Use the :doc:`Reference <navigation/reference>` to look up details about CLT settings and markup language.
+* Use the :doc:`Reference <navigation/reference>` to look up details about the CLI and Markdown conventions.
 
 .. include:: links.rst
 
