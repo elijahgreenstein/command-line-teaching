@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Explanation &#8212; CLT 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <script src="../_static/documentation_options.js?v=a58bc63e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How-to guides" href="howto.html" />
+    <link rel="prev" title="5. Upload materials to Canvas" href="../tutorial/upload.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="explanation">
+<h1>Explanation<a class="headerlink" href="#explanation" title="Link to this heading">¶</a></h1>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">¶</a></h2>
+<p>A basic predecessor of Command Line Teaching was developed by Elijah Greenstein while he was teaching university courses either remotely or in a hybrid format between 2020 and 2024. The tool was intended to facilitate teaching in an online environment by simplifying the process of uploading materials to the learning management system (<a class="reference external" href="https://www.instructure.com/canvas">Canvas LMS</a>).</p>
+<p>In 2025, the Python library was reorganized and packaged as “Command Line Teaching” for use by other instructors.</p>
+</section>
+<section id="assumptions-and-goals">
+<h2>Assumptions and Goals<a class="headerlink" href="#assumptions-and-goals" title="Link to this heading">¶</a></h2>
+<p>Remote teaching tends to require instructors to rely on written materials to communicate course expectations, deadlines, content, and other information more than is the case for in-person teaching. This is particularly true for asynchronous learning. In an in-person setting, instructors can orally communicate the day’s lesson plan and expectations, and they are available on site to direct (and redirect) students to tasks and learning activities. In contrast, in remote (and possibly asynchronous) settings, instructors rely more on course pages containing written instructions to provide instruction to students.</p>
+<p>In an online setting, learning materials must therefore be organized such that students (who have other courses, obligations, and commitments) can quickly understand their tasks for a given day, week, or term, and efficiently access the materials required to accomplish those tasks.</p>
+</section>
+<section id="organizing-principles">
+<h2>Organizing Principles<a class="headerlink" href="#organizing-principles" title="Link to this heading">¶</a></h2>
+<p>Command Line Teaching was developed under two organizing principles to accomplish the above goals:</p>
+<dl>
+<dt><strong>Modularity</strong></dt><dd><p>Course materials should be organized into separate, meaningful modules. “Meaningful” means that instructors make deliberate decisions based on a clear logic about how to divide a course into units. Each module should be roughly comparable in scope.</p>
+<p>For example, a term might be organized into week-long modules, each organized around a specific theme. In each module, students engage with content focused on a common set of issues for a set amount of time.</p>
+</dd>
+<dt><strong>Consistency</strong></dt><dd><p>The format and organization of learning materials should be consistent. This means that each module contains materials organized in a consistent order with a consistent appearance.</p>
+<p>For example, each module might begin with a page that lists tasks and deadlines, proceed to a quiz, and end with a writing activity.</p>
+</dd>
+</dl>
+<p><strong>Modular</strong> course design means that students can focus on a constrained set of tasks and content within a given time frame. <strong>Consistent</strong> course design means that students know where to look for information every time they engage with a module, and they become familiar with the steps required to complete each module.</p>
+</section>
+<section id="the-command-line-teaching-approach">
+<h2>The “Command Line Teaching” Approach<a class="headerlink" href="#the-command-line-teaching-approach" title="Link to this heading">¶</a></h2>
+<p>Command Line Teaching is set up to simplify the creation of learning materials that satisfy the above principles.</p>
+<p>The <a class="reference internal" href="../reference/cli-commands/newcourse.html#cli-commands-clt-newcourse"><span class="std std-ref">clt newcourse</span></a> command establishes a number of course settings, such as default quiz unlock and lock times, that facilitate <strong>consistency</strong> across course modules.</p>
+<p>The <a class="reference internal" href="../reference/cli-commands/addmod.html#cli-commands-clt-addmod"><span class="std std-ref">clt addmod</span></a> command makes it simple to create new <strong>modules</strong> with a <strong>consistent</strong>, default set of course files (introduction page, quiz, and discussion board).</p>
+<p>Writing in <a class="reference internal" href="../reference/markdown.html#markdown"><span class="std std-ref">Markdown</span></a> leaves decision about style to the Canvas LMS, which ensures a <strong>consistent</strong> appearance. Every section heading, for example, appears the same.</p>
+<p>The <a class="reference internal" href="../reference/cli-commands/upmod.html#cli-commands-clt-upmod"><span class="std std-ref">clt upmod</span></a> command requires users to prepare a complete <strong>module</strong> before uploading it to Canvas all at once (rather than in bits and pieces). This fosters deliberate decision-making about what to include in each <strong>module</strong>.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">CLT</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=elijahgreenstein&repo=command-line-teaching&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Explanation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assumptions-and-goals">Assumptions and Goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#organizing-principles">Organizing Principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-command-line-teaching-approach">The “Command Line Teaching” Approach</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="howto.html">How-to guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Elijah Greenstein.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/navigation/explanation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
