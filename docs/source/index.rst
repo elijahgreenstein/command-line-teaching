@@ -16,6 +16,10 @@ Command Line Teaching (CLT) is a command line toolkit written in Python that ena
   navigation/howto
   navigation/reference
 
+**Prerequisites:** Familiarity with Markdown syntax, specifically the `CommonMark <commonmark_>`_ specification. Resources: CommonMark `help page <https://commonmark.org/help/>`_ and `10 Minute Markdown Tutorial <https://commonmark.org/help/tutorial/>`_.
+
+**CLT documentation:**
+
 * Start with the :doc:`Tutorial <navigation/tutorial>` for a gentle introduction to the CLT toolkit.
 * Read the :doc:`Explanation <navigation/explanation>` for an overview of the CLT approach to learning materials.
 * Refer to the :doc:`How-to guides <navigation/howto>` for examples of how to customize your course.
