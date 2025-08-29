@@ -40,7 +40,7 @@ The default settings are shown below, where ``<USER>`` represents user responses
 Change discussion settings
 ------------------------------------------------------------
 
-Default discussing settings follow ``discussion``. The `Canvas API documentation <canvas_api_>`_ provides details about other options for "`Discussion Topics <canvas_api_disc_>`_." Follow `YAML <yaml_>`_ syntax to add other parameters.
+Default settings for discussion boards follow ``discussion``. The `Canvas API documentation <canvas_api_>`_ provides details about other options for "`Discussion Topics <canvas_api_disc_>`_." Follow `YAML <yaml_>`_ syntax to add other parameters.
 
 Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
