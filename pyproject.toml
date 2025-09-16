@@ -14,7 +14,7 @@ license-files = ["LICENSE"]
 dependencies = [
   "jinja2",
   "markdown-it-py",
-  "mdit_py_plugins",
+  "mdit-py-plugins",
   "pyyaml",
   "requests",
 ]
