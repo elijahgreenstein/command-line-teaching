@@ -3,7 +3,9 @@
 Installation
 ============================================================
 
-Command Line Teaching
+We first need to install the CLT toolkit.
+
+Install with ``pip``
 ------------------------------------------------------------
 
 Open a terminal. Type the command below and press ``enter`` to install the CLT toolkit with ``pip``.

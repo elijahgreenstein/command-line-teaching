@@ -3,7 +3,7 @@
 Upload materials to Canvas
 ============================================================
 
-In this tutorial, we will use the CLT toolkit to upload our course materials to Canvas LMS.
+In this final part of the tutorial, we will use the CLT toolkit to upload our teaching materials to Canvas LMS.
 
 The upload tool
 ------------------------------------------------------------

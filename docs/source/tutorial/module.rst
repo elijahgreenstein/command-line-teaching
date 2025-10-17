@@ -3,7 +3,7 @@
 Set up a new module
 ============================================================
 
-In this tutorial, we will use the CLT toolkit to add a new module to our course.
+In this part of the tutorial, we will use the CLT toolkit to add a new module to our course.
 
 Add a module
 ------------------------------------------------------------
