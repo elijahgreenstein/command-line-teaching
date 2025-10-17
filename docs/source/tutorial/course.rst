@@ -19,9 +19,9 @@ Create a new course
 
 We are now ready to set up a new course. We can access the CLT toolkit with the command ``clt``, followed by the name of a "tool." To create a new course, we use the ``newcourse`` tool followed by the name of a directory. For this tutorial, we will set up our new course in a directory named ``CLT101``. Type the following command and press ``enter``:
 
-.. code-block:: bash
+.. code-block:: console
 
-  clt newcourse CLT101
+  $ clt newcourse CLT101
 
 You will now be asked a series of questions:
 

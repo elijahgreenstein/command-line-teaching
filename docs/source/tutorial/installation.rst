@@ -10,9 +10,9 @@ Install with ``pip``
 
 Open a terminal. Type the command below and press ``enter`` to install the CLT toolkit with ``pip``.
 
-.. code-block:: bash
+.. code-block:: console
 
-  pip install git+https://github.com/elijahgreenstein/command-line-teaching.git
+  $ pip install git+https://github.com/elijahgreenstein/command-line-teaching.git
 
 ``pip`` will also install these required Python packages and their dependencies:
 

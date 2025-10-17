@@ -10,9 +10,9 @@ Add a module
 
 Change into the ``CLT101`` directory; then type this command and press ``enter``:
 
-.. code-block:: bash
+.. code-block:: console
 
-  clt addmod Week_01
+  $ clt addmod Week_01
 
 You will now be asked a series of questions:
 

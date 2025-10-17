@@ -10,9 +10,9 @@ The upload tool
 
 Module upload is simple with the CLT ``upmod`` tool. Make sure that ``CLT101`` is the current working directory; then type this command and press ``enter``:
 
-.. code-block:: bash
+.. code-block:: console
 
-  clt -v upmod Week_01
+  $ clt -v upmod Week_01
 
 We used the "verbose" option ``-v`` to make the ``upmod`` tool print messages about the upload process. If all settings are configured correctly, the following should print to the terminal:
 

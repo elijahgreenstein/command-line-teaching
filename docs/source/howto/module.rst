@@ -10,9 +10,9 @@ Setup
 
 Set up a new module with the ``addmod`` tool (replace ``<MODULE>`` with the module directory name):
 
-.. code-block:: bash
+.. code-block:: console
 
-  clt addmod <MODULE>
+  $ clt addmod <MODULE>
 
 Answer the questions; the ``addmod`` tool will create the files listed under ``<MODULE>``:
 
