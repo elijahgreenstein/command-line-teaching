@@ -3,11 +3,6 @@
 Installation
 ============================================================
 
-Prerequisites
-------------------------------------------------------------
-
-The Command Line Teaching (CLT) toolkit requires an installation of `Python <python_>`_. Install this software first.
-
 Command Line Teaching
 ------------------------------------------------------------
 
