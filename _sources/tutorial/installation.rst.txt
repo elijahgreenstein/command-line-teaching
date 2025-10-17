@@ -3,19 +3,21 @@
 Installation
 ============================================================
 
-Prerequisites
-------------------------------------------------------------
+We first need to install the CLT toolkit.
 
-The Command Line Teaching (CLT) toolkit requires an installation of `Python <python_>`_. Install this software first.
-
-Command Line Teaching
+Install with ``pip``
 ------------------------------------------------------------
 
 Open a terminal. Type the command below and press ``enter`` to install the CLT toolkit with ``pip``.
 
-.. code-block:: bash
+.. note::
 
-  pip install git+https://github.com/elijahgreenstein/command-line-teaching.git
+   In the CLT documentation, the dollar sign ``$`` represents the terminal prompt.
+   Do not include the dollar sign when you type out CLT commands.
+
+.. code-block:: console
+
+  $ pip install git+https://github.com/elijahgreenstein/command-line-teaching.git
 
 ``pip`` will also install these required Python packages and their dependencies:
 

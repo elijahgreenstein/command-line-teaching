@@ -3,14 +3,16 @@
 How to customize course settings
 ============================================================
 
+This guide shows you how to customize discussion and quiz settings for your course.
+
 Setup
 ------------------------------------------------------------
 
 Use the ``newcourse`` tool to create a new course:
 
-.. code-block:: bash
+.. code-block:: console
 
-   clt newcourse <NAME>
+   $ clt newcourse <NAME>
 
 Answer the questions. After the ``newcourse`` tool creates course files, open ``<NAME>/_conf/settings.yam``.
 

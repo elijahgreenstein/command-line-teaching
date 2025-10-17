@@ -3,16 +3,16 @@
 Upload materials to Canvas
 ============================================================
 
-In this tutorial, we will use the CLT toolkit to upload our course materials to Canvas LMS.
+In this final part of the tutorial, we will use the CLT toolkit to upload our teaching materials to Canvas LMS.
 
 The upload tool
 ------------------------------------------------------------
 
 Module upload is simple with the CLT ``upmod`` tool. Make sure that ``CLT101`` is the current working directory; then type this command and press ``enter``:
 
-.. code-block:: bash
+.. code-block:: console
 
-  clt -v upmod Week_01
+  $ clt -v upmod Week_01
 
 We used the "verbose" option ``-v`` to make the ``upmod`` tool print messages about the upload process. If all settings are configured correctly, the following should print to the terminal:
 
@@ -59,7 +59,7 @@ Note the steps in the process:
 Next steps
 ------------------------------------------------------------
 
-Content uploads are as simple as that! For additional customization, refer to the how-to guides:
+Content uploads are as simple as that! For additional customization, refer to the :doc:`how-to guides <../navigation/howto>`:
 
 * :doc:`../howto/course`
 * :doc:`../howto/module`
