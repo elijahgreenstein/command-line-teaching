@@ -10,6 +10,11 @@ Install with ``pip``
 
 Open a terminal. Type the command below and press ``enter`` to install the CLT toolkit with ``pip``.
 
+.. note::
+
+   In the CLT documentation, the dollar sign ``$`` represents the terminal prompt.
+   Do not include the dollar sign when you type out CLT commands.
+
 .. code-block:: console
 
   $ pip install git+https://github.com/elijahgreenstein/command-line-teaching.git
