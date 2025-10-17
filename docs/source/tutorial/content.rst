@@ -3,7 +3,7 @@
 Prepare module content
 ============================================================
 
-In this tutorial, we will add content to the files created by the ``addmod`` tool.
+We will now add content to the default module files that we created with the ``addmod`` tool.
 
 .. _introduction-page:
 

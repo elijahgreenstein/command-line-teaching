@@ -3,16 +3,16 @@
 Set up a new module
 ============================================================
 
-In this tutorial, we will use the CLT toolkit to add a new module to our course.
+In this part of the tutorial, we will use the CLT toolkit to add a new module to our course.
 
 Add a module
 ------------------------------------------------------------
 
 Change into the ``CLT101`` directory; then type this command and press ``enter``:
 
-.. code-block:: bash
+.. code-block:: console
 
-  clt addmod Week_01
+  $ clt addmod Week_01
 
 You will now be asked a series of questions:
 

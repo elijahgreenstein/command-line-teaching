@@ -1,6 +1,8 @@
 Explanation
 ============================================================
 
+This page provides an overview of the background and assumptions that shaped the development of the CLT toolkit.
+
 Background
 ------------------------------------------------------------
 

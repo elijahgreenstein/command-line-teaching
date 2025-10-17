@@ -1,6 +1,8 @@
 How to customize quizzes
 ============================================================
 
+This guide shows you how to customize quiz times and descriptions.
+
 Default quizzes
 ------------------------------------------------------------
 
