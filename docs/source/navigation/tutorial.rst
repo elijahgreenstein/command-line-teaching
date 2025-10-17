@@ -24,3 +24,4 @@ Parts
   ../tutorial/content
   ../tutorial/upload
 
+.. include:: ../links.rst
