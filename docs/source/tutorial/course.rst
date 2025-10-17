@@ -3,7 +3,7 @@
 Set up a new course
 ============================================================
 
-In this part of the tutorial, we will use the CLT command line interface to set up a new course: "CLT101 -- Introduction to Command Line Teaching."
+In this part of the tutorial, we will use the CLT command line interface (CLI) to set up a new course: "CLT101 -- Introduction to Command Line Teaching."
 
 Preparation
 ------------------------------------------------------------
