@@ -59,7 +59,7 @@ Note the steps in the process:
 Next steps
 ------------------------------------------------------------
 
-Content uploads are as simple as that! For additional customization, refer to the how-to guides:
+Content uploads are as simple as that! For additional customization, refer to the :doc:`how-to guides <../navigation/howto>`:
 
 * :doc:`../howto/course`
 * :doc:`../howto/module`
