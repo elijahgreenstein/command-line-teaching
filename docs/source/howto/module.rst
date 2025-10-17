@@ -3,6 +3,8 @@
 How to customize module settings
 ============================================================
 
+This guide shows you how to customize the organization of files in your module.
+
 Setup
 ------------------------------------------------------------
 

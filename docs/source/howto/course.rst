@@ -3,6 +3,8 @@
 How to customize course settings
 ============================================================
 
+This guide shows you how to customize discussion and quiz settings for your course.
+
 Setup
 ------------------------------------------------------------
 
