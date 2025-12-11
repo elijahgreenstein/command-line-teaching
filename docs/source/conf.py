@@ -38,3 +38,15 @@ html_sidebars = {
         "navigation.html",
     ],
 }
+
+# -- Options for LaTeX output ------------------------------------------------
+
+latex_documents = [
+    (
+        "index",
+        "CommandLineTeaching.tex",
+        "Command Line Teaching",
+        "",
+        "manual",
+    ),
+]
